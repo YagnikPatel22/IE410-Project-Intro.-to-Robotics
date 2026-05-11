@@ -233,7 +233,7 @@ IE410-Group18-Aurum-Robotics/
 | Part A — Demo Video (Google Drive) | `[INSERT GOOGLE DRIVE LINK]` |
 | Part B — Demo Video (Google Drive) | `[INSERT GOOGLE DRIVE LINK]` |
 | Part A - Project Report (PDF) | `[INSERT REPORT LINK]` |
-| Part B - Project Report (PDF) | `[INSERT REPORT LINK]` |
+| Part B - Project Report (PDF) | `Project Part B Report.pdf` |
 
 ---
 
