@@ -1,9 +1,9 @@
 # IE410 — Introduction to Robotics
-## Group 18 — Aurum Robotics
+## Group 18
 
-**Institution:** DA-IICT (Dhirubhai Ambani Institute of Information and Communication Technology), Gandhinagar  
+**Institution:** DAU (Dhirubhai Ambani University), Gandhinagar  
 **Course:** IE410 — Introduction to Robotics  
-**Semester:** Winter 2026
+**Semester:** IV, Winter 2026
 
 ---
 
@@ -32,9 +32,7 @@ This repository contains the complete work for the IE410 course project — spli
 
 ## Part A — Object Manipulation using Arduino Braccio
 
-**Hardware:** Arduino Braccio robotic arm (6-DOF) with two-finger gripper  
-**Language:** Arduino C++  
-**Grading Weight:** 11% (3% + 3% + 5%)
+**Hardware:** Arduino Braccio robotic arm (6-DOF) with two-finger gripper   
 
 The Part A project explores kinematic control of a robotic manipulator across three increasingly complex manipulation tasks — from pre-planned motion to multi-robot coordination.
 
@@ -135,7 +133,6 @@ The Part A project explores kinematic control of a robotic manipulator across th
 
 **File:** `Part-B/modified_jansen_gait_trainer_separate_window.m`  
 **Language:** MATLAB  
-**Grading Weight:** 4%
 
 ### Overview
 
@@ -233,10 +230,10 @@ IE410-Group18-Aurum-Robotics/
 
 | Resource | Link |
 |----------|------|
-| GitHub Repository | `[INSERT GITHUB LINK]` |
 | Part A — Demo Video (Google Drive) | `[INSERT GOOGLE DRIVE LINK]` |
 | Part B — Demo Video (Google Drive) | `[INSERT GOOGLE DRIVE LINK]` |
-| Combined Project Report (PDF) | `[INSERT REPORT LINK]` |
+| Part A - Project Report (PDF) | `[INSERT REPORT LINK]` |
+| Part B - Project Report (PDF) | `[INSERT REPORT LINK]` |
 
 ---
 
