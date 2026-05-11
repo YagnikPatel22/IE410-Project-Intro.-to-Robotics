@@ -245,4 +245,4 @@ The MathWorks, Inc. (2024). *MATLAB (R2024b)*. Natick, Massachusetts. https://ww
 
 Arduino. (2024). *Braccio Library*. https://www.arduino.cc/reference/en/libraries/braccio/
 
-IE410: Introduction to Robotics — Project Part A & Part B. Course documents, DA-IICT, Winter 2026.
+IE410: Introduction to Robotics — Project Part A & Part B. Course documents, DAU, Winter 2026.
