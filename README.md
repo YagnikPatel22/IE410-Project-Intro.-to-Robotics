@@ -230,9 +230,9 @@ IE410-Group18-Aurum-Robotics/
 
 | Resource | Link |
 |----------|------|
-| Part A — Demo Video (Google Drive) | `[INSERT GOOGLE DRIVE LINK]` |
-| Part B — Demo Video (Google Drive) | `jansen_mechanism_animation.gif` |
-| Part A - Project Report (PDF) | `[INSERT REPORT LINK]` |
+| Part A — Demo Video (Google Drive) | `[[INSERT GOOGLE DRIVE LINK]](https://drive.google.com/drive/folders/1fuxnK6L13juL0kl1DMiUL3OvnvQntQ4-?usp=share_link)` |
+| Part B — Demo Video (Google Drive) | `[jansen_mechanism_animation.gif](https://drive.google.com/file/d/19ueDgOKuSGHDaRASxU4plLGacA-xxt9Q/view?usp=share_link)` |
+| Part A - Project Report (PDF) | `Part A Project Report.pdf` |
 | Part B - Project Report (PDF) | `Project Part B Report.pdf` |
 
 ---
