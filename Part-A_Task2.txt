@@ -1,0 +1,80 @@
+import cv2
+import cv2.aruco as aruco
+import serial
+import time
+import math
+
+# --- CONFIGURATION ---
+TARGET_ID = 0
+GRIPPER_ID = 1
+ALIGNMENT_THRESHOLD = 20 # Pixel distance to trigger grasp
+COM_PORT = 'COM13'        # <-- UPDATE THIS based on your Windows Device Manager
+
+try:
+    arduino = serial.Serial(COM_PORT, 115200, timeout=1)
+    time.sleep(2) 
+    print("Connected to Braccio!")
+except Exception as e:
+    print(f"Serial error: {e}")
+    exit()
+
+cap = cv2.VideoCapture(1)
+aruco_dict = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
+parameters = aruco.DetectorParameters()
+
+def get_marker_center(corners):
+    c = corners[0]
+    return (int((c[0][0] + c[2][0]) / 2), int((c[0][1] + c[2][1]) / 2))
+
+# Wait for Arduino boot
+while arduino.readline().decode('utf-8').strip() != "READY":
+    pass
+
+print("Starting visual servoing loop...")
+
+while True:
+    ret, frame = cap.read()
+    if not ret: break
+
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    corners, ids, rejected = aruco.detectMarkers(gray, aruco_dict, parameters=parameters)
+
+    target_center = None
+    gripper_center = None
+
+    if ids is not None:
+        aruco.drawDetectedMarkers(frame, corners, ids)
+        for i, marker_id in enumerate(ids.flatten()):
+            if marker_id == TARGET_ID:
+                target_center = get_marker_center(corners[i])
+            elif marker_id == GRIPPER_ID:
+                gripper_center = get_marker_center(corners[i])
+
+    if target_center and gripper_center:
+        cv2.line(frame, gripper_center, target_center, (0, 0, 255), 2)
+        
+        error_x = target_center[0] - gripper_center[0]
+        error_y = target_center[1] - gripper_center[1]
+        distance = math.sqrt(error_x**2 + error_y**2)
+
+        if distance < ALIGNMENT_THRESHOLD:
+            arduino.write(b"<GRASP>\n")
+            print("Aligned! Executing tactile grasp sequence.")
+            time.sleep(1) # Prevent spamming the command
+        else:
+            command = f"<{error_x},{error_y}>\n"
+            arduino.write(command.encode('utf-8'))
+            
+        # Wait for Arduino to physically move before grabbing next frame
+        while True:
+            response = arduino.readline().decode('utf-8').strip()
+            if response == "READY":
+                break
+
+    cv2.imshow('Top-Down Visual Servoing', frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+arduino.close()
