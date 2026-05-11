@@ -177,7 +177,7 @@ L1 (crank), L4 (ground link), and L8 (coupler) are the three adjustable links fo
 
 ### Animation
 
-![Jansen Mechanism Animation](Part-B/figures/jansen_mechanism_animation.gif)
+![Jansen Mechanism Animation](jansen_mechanism_animation.gif)
 
 ### How to Run
 
